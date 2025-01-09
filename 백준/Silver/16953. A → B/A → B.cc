@@ -25,6 +25,7 @@ int main() {
 		pair<long long, int> front = q.front();
 		long long k = front.first;
 		int att = front.second + 1;
+		visited[k] = true;
 		q.pop();
 
 		if (k * 2 == endp || 10 * k + 1 == endp) {
@@ -34,9 +35,11 @@ int main() {
 		
 		if (inRange(k * 2) && !visited[k * 2]) {
 			q.push({ k * 2, att });
+			visited[k * 2] = true;
 		}
 		if (inRange(10 * k + 1) && !visited[10 * k + 1]) {
 			q.push({ 10 * k + 1, att });
+			visited[10 * k + 1] = true;
 		}
 	}
 
