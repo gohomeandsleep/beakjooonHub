@@ -29,7 +29,6 @@ int main() {
 	psum.push_back(stairs[0] + stairs[1]);
 
 	for (int i = 2; i < N; i++) {
-		//cout << psum[i - 2]<< " : " << psum[i - 3] + stairs[i - 1] << endl;
 		psum.push_back(max(psum[i - 2], psum[i - 3] + stairs[i - 1]) + stairs[i]);
 	}
 
