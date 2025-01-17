@@ -10,6 +10,8 @@ int main() {
 
 	vector<vector<int>> arr(N, vector<int>(N, -1));
 
+	int v = -1;
+
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j <= i; j++) {
 			int k;
@@ -26,16 +28,12 @@ int main() {
 				}
 			}
 			else arr[i][j] = k;
+
+			v = max(v, arr[i][j]);
 		}
 	}
-
-	vector<int> result = arr[N - 1];
-	int k = -1;
-	for (int i = 0; i < result.size(); i++) {
-		k = max(k, result[i]);
-	}
-
-	cout << k << endl; 
+	
+	cout << v << endl;
 
 	return 0;
 	
