@@ -8,15 +8,6 @@ using namespace std;
 int dy[4] = {1, -1, 0, 0};
 int dx[4] = {0, 0, 1, -1};
 
-void dump(vector<vector<int>> array, int N, int M) { // for debug
-	for (int a = 0; a < N; a++) {
-		for (int b = 0; b < M; b++) {
-			cout << array[a][b] << " ";
-		}
-		cout << endl;
-	}
-}
-
 bool inRange(int y, int x, int h, int w) {
 	return y >= 0 && x >= 0 && y < h && x < w;
 }
@@ -27,7 +18,7 @@ int virus(vector<vector<int>> array, int i, int j, int k, int N, int M) {
 	array[j / M][j % M] = 1;
 	array[k / M][k % M] = 1;
 
-	//make the queue and push virst location
+	//make the queue and push virus location(2)
 	queue<pair<int, int>> q;
 	for (int a = 0; a < N; a++) { // y
 		for (int b = 0; b < M; b++) { // x
