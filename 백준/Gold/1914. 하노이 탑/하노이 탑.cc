@@ -38,7 +38,7 @@ void hanoi(int st, int via, int ed, int depth) {
 }
 
 int main() {
-    cin.tie(NULL); ios_base::sync_with_stdio(false);
+    // cin.tie(NULL); ios_base::sync_with_stdio(false);
     
 	int k;
 	scanf("%d", &k);
