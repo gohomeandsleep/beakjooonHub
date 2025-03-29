@@ -24,8 +24,8 @@ void dump(stack<T> s) {
 
 int icp(char s) {
 	if (s == '(') return 3;
-	if (s == '*' || s == '/') return 2;
-	if (s == '+' || s == '-') return 1;
+	else if (s == '*' || s == '/') return 2;
+	else return 1;
 }
 
 int main() {
@@ -54,7 +54,6 @@ int main() {
 			else { //연산자 우선순위 고려햐여 push하거나 pop
 				int prev = icp(token.top());
 				int pres = icp(s[i]);
-				//cout << prev << " : " << pres << endl;
 				if (prev == 3 || prev < pres) { //삽입하는 상황
 					token.push(s[i]);
 				}
@@ -70,16 +69,6 @@ int main() {
 		else { //피연산자므로 바로 결과에 추가
 			result.push_back(s[i]);
 		}
-		//debug
-		//cout << "현재 문자열 : ";
-		//for (int i = 0; i < result.size(); i++) {
-		//	cout << result[i];
-		//}
-		//cout << endl;
-		//cout << "현재 토큰 : ";
-		//dump(token);
-		//cout << endl;
-		//system("pause");
 	}
 
 	while (!token.empty()) {
